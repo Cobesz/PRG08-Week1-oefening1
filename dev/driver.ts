@@ -1,11 +1,10 @@
-class Driver {
-            
-    private div:HTMLElement;
+///<reference path="gameObject.ts"/>
+
+
+class Driver extends GameObject{
             
     constructor() {
-        this.div = document.createElement("driver");
-        document.body.appendChild(this.div);
-
+        super("driver");
         this.div.style.transform ="translate(200px,100px)";
 
         let m:Message = new Message();

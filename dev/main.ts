@@ -2,10 +2,20 @@
 /// <reference path="driver.ts"/>
 
 class Game {
-    
+
+    private kart : Kart;
+    private driver: Driver;
+
     constructor() {
-        let k:Kart = new Kart();
-        let d:Driver = new Driver();
+        this.kart   = new Kart();
+        this.driver = new Driver();
+
+        requestAnimationFrame(() => this.gameLoop());
+    }
+
+    private gameLoop() {
+        this.kart.move();
+        requestAnimationFrame(() => this.gameLoop());
     }
     
 } 
